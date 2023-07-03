@@ -60,7 +60,7 @@ const reserveService={
         return resrv;
     },
     async getReserveByDate(date){
-        const reservs=await reserve.find({date:date,status:"confirmé"});
+        const reservs=await reserve.find({date:date,status: { $in: ["En cours", "Amicale","Payé","Avance"] }});
         if(!reservs)
         {
             throw new Error('No reserve found');
