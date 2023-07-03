@@ -1,7 +1,7 @@
 const apartement= require('../models/appartement');
 const apartService = {
     async getAllApart() {
-        const aparts=await apartement.find();
+        const aparts=await apartement.find().sort({ code: 1 });
         if(!aparts)
         {
             throw new Error('No aparts found');
