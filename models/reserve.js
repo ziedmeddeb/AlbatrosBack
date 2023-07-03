@@ -41,7 +41,8 @@ const reserveSchema = new mongoose.Schema({
         default:"pending"
     },
     remarque:{
-        type:String
+        type:String,
+        default:""
     }
 });
 const reserve = mongoose.model('reserve',reserveSchema);
