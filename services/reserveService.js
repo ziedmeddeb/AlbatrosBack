@@ -2,7 +2,7 @@ const reserve=require('../models/reserve');
 
 const reserveService={
 
-    async createReserve(appartement,user,date,cin,region,ntel,firstName,lastName,remarque){
+    async createReserve(appartement,user,date,cin,region,ntel,firstName,lastName,remarque,status){
         const resrv=await reserve.create({
             appartement,
             user,
@@ -12,7 +12,8 @@ const reserveService={
             cin,
             region,
             ntel,
-            remarque
+            remarque,
+            status
         });
         if(!resrv)
         {
