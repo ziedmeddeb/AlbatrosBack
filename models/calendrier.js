@@ -21,6 +21,7 @@ const calendrierSchema = new mongoose.Schema({
             },
             price:{
                 type:Number,
+                default:0
             },
             status:{
                 type:String,
