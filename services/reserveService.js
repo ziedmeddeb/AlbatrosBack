@@ -38,13 +38,13 @@ const reserveService={
         }
         return resrv;
     },
-    async updateReservStatus(id){
+    async updateReservStatus(id,status){
         const resrv=await reserve.findById(id);
         if(!resrv)
         {
             throw new Error('No reserve found');
         }
-        resrv.status="confirmé";
+        resrv.status=status;
         await resrv.save();
         return resrv;
     },
