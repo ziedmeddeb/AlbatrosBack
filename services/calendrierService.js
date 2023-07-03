@@ -25,37 +25,44 @@ const calenderService = {
             availabilit.push({
                 dateDeb:new Date(2023,5,18),
                 dateFin:new Date(2023,5,25),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,5,25),
                 dateFin:new Date(2023,6,2),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,6,2),
                 dateFin:new Date(2023,6,9),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,6,9),
                 dateFin:new Date(2023,6,16),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,6,16),
                 dateFin:new Date(2023,6,23),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,6,23),
                 dateFin:new Date(2023,6,30),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,7,30),
                 dateFin:new Date(2023,7,6),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,7,6),
@@ -66,22 +73,26 @@ const calenderService = {
                 dateDeb:new Date(2023,7,13),
                 dateFin:new Date(2023,7,20),
 
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,7,20),
                 dateFin:new Date(2023,7,27),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,7,27),
                 dateFin:new Date(2023,8,3),
-                available:true
+                available:true,
+                status:"disponible"
             });
             availabilit.push({
                 dateDeb:new Date(2023,8,3),
                 dateFin:new Date(2023,8,10),
-                available:true
+                available:true,
+                status:"disponible"
             });
             const cal=await calender.create({
                 appartement,
