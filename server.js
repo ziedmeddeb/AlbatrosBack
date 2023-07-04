@@ -36,3 +36,6 @@ app.use("/api/calendrier",calendrierController);
 
 const reservationController=require('./controllers/reserveController');
 app.use("/api/reservations",reservationController);
+
+const colabController=require('./controllers/colabController');
+app.use("/api/colabs",colabController);
