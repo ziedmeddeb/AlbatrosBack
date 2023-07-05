@@ -1,17 +1,18 @@
 const colab=require('../models/colab');
 const colabToken=require('../config/token');
 const colabService = {
-    async register(firstName,lastName,identifiant,password) {
+    async register(firstName,lastName,identifiant,password,role) {
         const colabident= await colab.findOne({identifiant:identifiant});
         if (colabident) {
             throw new Error('Colaborateur already exists');
         }
-        
+
         const colaborateur= await colab.create({
-            firstName:firstName,
-            lastName:lastName,
-            identifiant:identifiant,
-            password:password
+            firstName,
+            lastName,
+            identifiant,
+            password,
+            role
         });
         colaborateur.save();
         return {token:colabToken(colaborateur._id)};

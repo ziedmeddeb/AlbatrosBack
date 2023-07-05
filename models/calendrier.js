@@ -27,6 +27,18 @@ const calendrierSchema = new mongoose.Schema({
                 type:String,
 
             },
+            person:
+            {
+                persId:{
+                type:String,
+                default:""
+                },
+                role:{
+                    type:String,
+                    default:""
+                }
+            }
+            
 
         }
 

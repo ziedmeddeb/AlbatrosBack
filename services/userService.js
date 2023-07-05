@@ -21,7 +21,8 @@ const userService = {
         firstName,
         lastName,
         email,
-        password
+        password,
+        role
     ) {
         const user = await User.findOne({ email: email });
          if (user) {
@@ -32,7 +33,8 @@ const userService = {
             lastName,
             email,
             password,
-            joinedDate: Date.now()
+            joinedDate: Date.now(),
+            role
 
         });
         if(!newUser)
