@@ -130,7 +130,7 @@ const calenderService = {
             await cal.save();
             return cal;
         },
-        async updateCalenderBydate(idApart,idDate,status,person)
+        async updateCalenderBydate(idApart,idDate,status,persId,role)
         {
             const cal=await calender.findOne({appartement:idApart});
             if(!cal)
@@ -142,8 +142,8 @@ const calenderService = {
                 {
                     element.available=false;
                     element.status=status;
-                    element.person.persId=person.personId;
-                    element.person.role=person.role;
+                    element.persId=persId;
+                    element.role=role;
                 }
             }
             );
@@ -162,8 +162,8 @@ const calenderService = {
                 {
                     element.available=true;
                     element.status=status;
-                    element.person.persId="";
-                    element.person.role="";
+                    element.persId="";
+                    element.role="";
                 }
             }
             );

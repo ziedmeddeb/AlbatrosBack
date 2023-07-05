@@ -27,8 +27,7 @@ const calendrierSchema = new mongoose.Schema({
                 type:String,
 
             },
-            person:
-            {
+            
                 persId:{
                 type:String,
                 default:""
@@ -36,7 +35,7 @@ const calendrierSchema = new mongoose.Schema({
                 role:{
                     type:String,
                     default:""
-                }
+                
             }
             
 
