@@ -23,11 +23,12 @@ calendrierController.put('/update/:id',asyncHandler(async (req,res)=>{
 }
 ));
 
-calendrierController.put('/update/:idApart/:idDate/:status',asyncHandler(async (req,res)=>{
+calendrierController.put('/update/:idApart/:idDate/:status/:person',asyncHandler(async (req,res)=>{
     const calendrier=await calendrierServices.updateCalenderBydate(
         req.params.idApart,
         req.params.idDate,
-        req.params.status
+        req.params.status,
+        req.params.person
     );
     res.json(calendrier);
 }
