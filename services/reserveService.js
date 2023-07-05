@@ -51,12 +51,12 @@ const reserveService={
         return resrv;
     },
     async annulerReserv(id){
-        const resrv=await reserve.findById(id);
+        const resrv=await reserve.findByIdAndDelete(id);
         if(!resrv)
         {
             throw new Error('No reserve found');
         }
-        resrv.status="annulé";
+        
         await resrv.save();
         return resrv;
     },
