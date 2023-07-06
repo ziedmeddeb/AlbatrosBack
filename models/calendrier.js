@@ -36,7 +36,11 @@ const calendrierSchema = new mongoose.Schema({
                     type:String,
                     default:""
                 
-            }
+            },
+            nom:{
+                type:String,
+                default:""
+            },
             
 
         }
