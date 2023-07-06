@@ -30,11 +30,11 @@ const reserveSchema = new mongoose.Schema({
     },
     region:{
         type:String,
-        required:true
+        
     },
     ntel:{
         type:String,
-        required:true
+        
     },
     status:{
         type:String,
