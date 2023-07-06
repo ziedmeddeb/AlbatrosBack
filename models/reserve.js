@@ -43,6 +43,11 @@ const reserveSchema = new mongoose.Schema({
     remarque:{
         type:String,
         default:""
+    },
+    nom:
+    {
+        type:String,
+        default:""
     }
 });
 const reserve = mongoose.model('reserve',reserveSchema);
