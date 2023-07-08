@@ -12,11 +12,13 @@ const reserveSchema = new mongoose.Schema({
     },
     firstName:{
         type:String,
+        default:""
 
 
     },
     lastName:{
-        type:String
+        type:String,
+        default:""
 
     },
     date:{
