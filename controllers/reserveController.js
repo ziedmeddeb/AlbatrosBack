@@ -38,7 +38,7 @@ reserveController.put('/update/:id/:status',asyncHandler(async(req,res)=>{
 }
 ));
 
-reserveController.put('/annuler/:id',asyncHandler(async(req,res)=>{
+reserveController.delete('/annuler/:id',asyncHandler(async(req,res)=>{
     const reserve=await reserveService.annulerReserv(req.params.id);
     res.json(reserve);
 }
