@@ -52,6 +52,7 @@ const reserveService={
   resrv.ntel = resv.ntel;
   resrv.region = resv.region;
   resrv.status = resv.status;
+  resrv.remarque = resv.remarque;
         await resrv.save();
         return resrv;
     },
