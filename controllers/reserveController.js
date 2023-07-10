@@ -32,8 +32,8 @@ reserveController.get('/apart/:id/date/:date',asyncHandler(async(req,res)=>{
 }
 ));
 
-reserveController.put('/update/:id/:status',asyncHandler(async(req,res)=>{
-    const reserve=await reserveService.updateReservStatus(req.params.id,req.params.status,req.body.remarque);
+reserveController.put('/update/:id',asyncHandler(async(req,res)=>{
+    const reserve=await reserveService.updateReserv(req.params.id,req.body);
     res.json(reserve);
 }
 ));

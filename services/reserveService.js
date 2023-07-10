@@ -40,14 +40,13 @@ const reserveService={
         }
         return resrv;
     },
-    async updateReservStatus(id,status,remarque){
+    async updateReserv(id,resv){
         const resrv=await reserve.findById(id);
         if(!resrv)
         {
             throw new Error('No reserve found');
         }
-        resrv.status=status;
-        resrv.remarque=remarque;
+        resrv=resv;
         await resrv.save();
         return resrv;
     },
