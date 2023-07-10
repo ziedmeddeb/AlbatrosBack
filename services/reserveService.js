@@ -58,7 +58,6 @@ const reserveService={
             throw new Error('No reserve found');
         }
         
-        await resrv.save();
         return resrv;
     },
     async getReserveByDate(date){
