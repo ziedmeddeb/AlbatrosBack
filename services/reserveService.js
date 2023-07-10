@@ -46,7 +46,12 @@ const reserveService={
         {
             throw new Error('No reserve found');
         }
-        resrv=resv;
+        resrv.firstName = resv.firstName;
+  resrv.lastName = resv.lastName;
+  resrv.cin = resv.cin;
+  resrv.ntel = resv.ntel;
+  resrv.region = resv.region;
+  resrv.status = resv.status;
         await resrv.save();
         return resrv;
     },
