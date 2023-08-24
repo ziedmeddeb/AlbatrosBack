@@ -11,6 +11,10 @@ const notificationSchema=new mongoose.Schema({
     auth:{
         type:String,
         required:true
+    },
+    role:{
+        type:String,
+        required:true
     }
 });
 const notification=mongoose.model('notification',notificationSchema);

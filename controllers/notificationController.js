@@ -6,7 +6,8 @@ notificationController.post('/stock',asyncHandler(async(req,res)=>{
     const notification=await notificationService.StockUser(
         req.body.endpoint,
         req.body.p256dh,
-        req.body.auth
+        req.body.auth,
+        req.body.role
     );
     res.json(notification);
 }
