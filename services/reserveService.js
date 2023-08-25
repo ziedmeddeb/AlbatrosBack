@@ -1,4 +1,5 @@
 const reserve=require('../models/reserve');
+const notificationService=require('../services/notificationService');
 
 const reserveService={
 
@@ -20,8 +21,10 @@ const reserveService={
         {
             throw new Error('Error creating reserve');
         }
-        
+
+        notificationService.sendNotificationAdmin("Reservation pour "+appartement);
         await resrv.save();
+
         return resrv;
     },
     async getReserveByApartId(id){
