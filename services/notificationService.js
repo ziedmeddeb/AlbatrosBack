@@ -38,7 +38,7 @@ const notificationService = {
             notification: {
                 title: 'Albatros reservation',
                 body: msg,
-                icon: 'assets/icons/icon-384x384.png',
+                icon: '../albatros.jpeg',
                 actions: [
                     { action: 'bar', title: 'Focus last' },
                     { action: 'baz', title: 'Navigate last' },
