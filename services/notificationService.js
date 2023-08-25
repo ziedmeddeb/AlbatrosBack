@@ -70,7 +70,7 @@ const notificationService = {
 
 webpush.sendNotification(subscription, JSON.stringify(payload), options)
     .then((_) => {
-        console.log('SENT!!');
+        console.log('SENT!!!!!!');
         console.log(_);
     })
     .catch((_) => {
