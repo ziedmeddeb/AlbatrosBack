@@ -20,7 +20,8 @@ reserveController.post('/add',asyncHandler(async(req,res)=>{
         req.body.lastName,
         req.body.remarque,
         req.body.status,
-        req.body.nom
+        req.body.nom,
+        req.body.code,
     );
     res.json(reserve);
 }

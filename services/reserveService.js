@@ -1,6 +1,6 @@
 const reserve=require('../models/reserve');
 const notificationService=require('../services/notificationService');
-const appartementService=require('../services/appartementService');
+
 
 const reserveService={
 
@@ -16,13 +16,14 @@ const reserveService={
             ntel,
             remarque,
             status,
-            nom
+            nom,
+            code
         });
         if(!resrv)
         {
             throw new Error('Error creating reserve');
         }
-        const appart=await appartementService.getApartById(appartement);
+       
         const currentDate = date;
         const numberOfDaysToAdd = 7;
         
