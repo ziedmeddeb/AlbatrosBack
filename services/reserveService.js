@@ -1,5 +1,6 @@
 const reserve=require('../models/reserve');
 const notificationService=require('../services/notificationService');
+const appartementService=require('../services/appartementService');
 
 const reserveService={
 
@@ -21,8 +22,21 @@ const reserveService={
         {
             throw new Error('Error creating reserve');
         }
+        const appart=await appartementService.getApartById(appartement);
+        const currentDate = date;
+        const numberOfDaysToAdd = 7;
+        
+        // Calculate milliseconds for the given number of days
+        const millisecondsInADay = 24 * 60 * 60 * 1000; // 1 day = 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+        const futureDateMilliseconds = currentDate.getTime() + (numberOfDaysToAdd * millisecondsInADay);
+        
+        // Create a new Date object with the calculated milliseconds
+        const futureDate = new Date(futureDateMilliseconds);
+        
+        console.log("Current Date:", currentDate.toDateString());
+        console.log("Future Date:", futureDate.toDateString());
 
-        notificationService.sendNotificationAdmin("Reservation pour "+appartement.code+" pour la date "+date);
+        notificationService.sendNotificationAdmin("Reservation pour "+appart.code+" pour la date "+currentDate+" - "+futureDate);
         await resrv.save();
 
         return resrv;
