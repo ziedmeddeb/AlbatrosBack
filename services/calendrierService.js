@@ -1,4 +1,5 @@
 const calender=require('../models/calendrier');
+const notificationService=require('../services/notificationService');
 const calenderService = {
     async getCalenderByApartId(id) {
         const cals= await calender.findOne({appartement:id});
@@ -133,10 +134,12 @@ const calenderService = {
         async updateCalenderBydate(idApart,idDate,status,persId,role,nom)
         {
             const cal=await calender.findOne({appartement:idApart});
+            
             if(!cal)
             {
                 throw new Error('No calender found');
             }
+            const dateSelected="";
             cal.availabilities.forEach(element => {
                 if(element._id==idDate)
                 {
@@ -145,15 +148,18 @@ const calenderService = {
                     element.persId=persId;
                     element.role=role;
                     element.nom=nom;
+                    dateSelected=element.dateDeb+ " - "+element.dateFin;
                 }
             }
             );
             await cal.save();
+            notificationService.sendNotificationAdmin(cal.appartement.code+" est reservé pour la date "+dateSelected);
             return cal;
         },
         async updateCalenderBydate2(idApart,idDate,status)
         {
             const cal=await calender.findOne({appartement:idApart});
+            const dateSelected="";
             if(!cal)
             {
                 throw new Error('No calender found');
@@ -166,10 +172,12 @@ const calenderService = {
                     element.persId="";
                     element.role="";
                     element.nom="";
+                    dateSelected=element.dateDeb+ " - "+element.dateFin;
                 }
             }
             );
             await cal.save();
+            notificationService.sendNotificationAdmin(cal.appartement.code+" reservation annulée pour la date "+dateSelected);
             return cal;
 
 

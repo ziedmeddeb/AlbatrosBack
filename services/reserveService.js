@@ -22,7 +22,7 @@ const reserveService={
             throw new Error('Error creating reserve');
         }
 
-        notificationService.sendNotificationAdmin("Reservation pour "+appartement);
+        notificationService.sendNotificationAdmin("Reservation pour "+appartement.code+" pour la date "+date);
         await resrv.save();
 
         return resrv;
