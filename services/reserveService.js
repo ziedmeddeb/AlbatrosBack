@@ -4,7 +4,7 @@ const notificationService=require('../services/notificationService');
 
 const reserveService={
 
-    async createReserve(appartement,user,date,cin,region,ntel,firstName,lastName,remarque,status,nom){
+    async createReserve(appartement,user,date,cin,region,ntel,firstName,lastName,remarque,status,nom,code){
         const resrv=await reserve.create({
             appartement,
             user,
@@ -24,20 +24,23 @@ const reserveService={
             throw new Error('Error creating reserve');
         }
        
-        const currentDate = date;
+        const currentDate = new Date(date);
         const numberOfDaysToAdd = 7;
         
-        // Calculate milliseconds for the given number of days
-        const millisecondsInADay = 24 * 60 * 60 * 1000; // 1 day = 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-        const futureDateMilliseconds = currentDate.getTime() + (numberOfDaysToAdd * millisecondsInADay);
+        const futureDate = new Date(currentDate);
+        futureDate.setDate(currentDate.getDate() + numberOfDaysToAdd);
         
-        // Create a new Date object with the calculated milliseconds
-        const futureDate = new Date(futureDateMilliseconds);
+        // Options for formatting the date
+        const options = {  month: 'long', day: 'numeric' };
         
-        console.log("Current Date:", currentDate.toDateString());
-        console.log("Future Date:", futureDate.toDateString());
+        // Display the dates in French
+        const currentFrenchDate = currentDate.toLocaleDateString('fr-FR', options);
+        const futureFrenchDate = futureDate.toLocaleDateString('fr-FR', options);
+        
+        console.log("Date actuelle:", currentFrenchDate);
+        console.log("Date future:", futureFrenchDate);
 
-        notificationService.sendNotificationAdmin("Reservation pour "+appart.code+" pour la date "+currentDate+" - "+futureDate);
+        notificationService.sendNotificationAdmin("Reservation pour "+code+" pour la date "+currentFrenchDate+" - "+futureFrenchDate);
         await resrv.save();
 
         return resrv;
