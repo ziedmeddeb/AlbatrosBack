@@ -14,7 +14,7 @@ reserveController.post('/add',asyncHandler(async(req,res)=>{
         req.body.user,
         req.body.date,
         req.body.cin,
-        req.body.region,
+        req.body.dateRes,
         req.body.ntel,
         req.body.firstName,
         req.body.lastName,

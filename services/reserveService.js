@@ -4,7 +4,7 @@ const notificationService=require('../services/notificationService');
 
 const reserveService={
 
-    async createReserve(appartement,user,date,cin,region,ntel,firstName,lastName,remarque,status,nom,code){
+    async createReserve(appartement,user,date,cin,dateRes,ntel,firstName,lastName,remarque,status,nom,code){
         const resrv=await reserve.create({
             appartement,
             user,
@@ -12,7 +12,7 @@ const reserveService={
             lastName,
             date,
             cin,
-            region,
+            dateRes,
             ntel,
             remarque,
             status,
@@ -71,7 +71,7 @@ const reserveService={
   resrv.lastName = resv.lastName;
   resrv.cin = resv.cin;
   resrv.ntel = resv.ntel;
-  resrv.region = resv.region;
+  resrv.dateRes = resv.dateRes;
   resrv.status = resv.status;
   resrv.remarque = resv.remarque;
         await resrv.save();

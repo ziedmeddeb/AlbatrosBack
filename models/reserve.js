@@ -30,8 +30,9 @@ const reserveSchema = new mongoose.Schema({
         
         
     },
-    region:{
-        type:String,
+    dateRes:{
+        type:Date,
+        
         
     },
     ntel:{
