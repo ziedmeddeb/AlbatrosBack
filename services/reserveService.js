@@ -71,7 +71,7 @@ const reserveService={
   resrv.lastName = resv.lastName;
   resrv.cin = resv.cin;
   resrv.ntel = resv.ntel;
-  resrv.dateRes = resv.dateRes;
+  resrv.dateRes = resrv.dateRes;
   resrv.status = resv.status;
   resrv.remarque = resv.remarque;
         await resrv.save();
