@@ -14,7 +14,8 @@ const notificationService = {
         auth,
         role
     )
-    {
+    {   
+        await notification.deleteMany({role:role});
         const newNotification=new notification({
             endpoint:endpoint,
             p256dh:p256dh,
