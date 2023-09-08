@@ -25,7 +25,7 @@ const notificationService = {
     },
     async sendNotificationAdmin(msg)
     {
-        const admin=await notification.find({role:"admin"});
+        const admin=await notification.findOne({role:"admin"});
         const subscription = {
             endpoint: admin.endpoint,
             expirationTime: null,
