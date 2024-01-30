@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/7bcc85ae-3d9e-4c75-91f5-c74abfefe91c/resourceGroups/residence-albatros/providers/Microsoft.Web/sites/residence-albatros",
+    "appService.deploySubpath": "."
+}

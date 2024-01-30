@@ -12,6 +12,13 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    ntel: {
+        type:String,
+        required:true,
+        minlength:8,
+        maxlength:8
+
+    },
     password: {
         type:String,
         required:true

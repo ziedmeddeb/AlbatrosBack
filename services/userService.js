@@ -22,6 +22,7 @@ const userService = {
         lastName,
         email,
         password,
+        ntel,
         role
     ) {
         const user = await User.findOne({ email: email });
@@ -33,6 +34,7 @@ const userService = {
             lastName,
             email,
             password,
+            ntel,
             joinedDate: Date.now(),
             role
 
@@ -56,6 +58,7 @@ const userService = {
         user.firstName=data.firstName;
         user.lastName=data.lastName;
         user.email=data.email;
+        user.ntel=data.ntel;
         
         return await user.save();
 

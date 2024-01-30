@@ -17,7 +17,8 @@ userController.post('/create',asyncHandler(async (req,res)=>{
         req.body.firstName,
         req.body.lastName,
         req.body.email,
-        req.body.password
+        req.body.password,
+        req.body.ntel,
     );
     res.json(user);
 }

@@ -25,11 +25,7 @@ const reserveSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
-    cin:{
-        type:String,
-        
-        
-    },
+    
     dateRes:{
         type:Date,
         
