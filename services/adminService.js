@@ -6,6 +6,7 @@ const adminService = {
         password
     )
     {
+        try{
         const admin= await Admin.findOne({identifiant:identifiant});
         if(!admin)
         {
@@ -16,6 +17,10 @@ const adminService = {
             throw new Error('Wrong password');
         }
         return {token:adminToken(admin._id)};
+    }catch(err)
+    {
+        console.log(err);
+    }
     }
 }
 module.exports=adminService;

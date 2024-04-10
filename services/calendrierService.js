@@ -1,20 +1,32 @@
 const calender=require('../models/calendrier');
 const calenderService = {
     async getCalenderByApartId(id) {
+        try{
         const cals= await calender.findOne({appartement:id});
         if(!cals)
         {
             throw new Error('No calenders found');
         }
         return cals;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
     },
     async getCalenderById(id) {
+        try{
         const cal=await calender.findById(id);
         if(!cal)
         {
             throw new Error('No calender found');
         }
         return cal;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
     },
     async createCalender(
         appartement
@@ -157,6 +169,7 @@ const calenderService = {
         },
         async updateCalenderBydate2(idApart,idDate,status)
         {
+            try{
             const cal=await calender.findOne({appartement:idApart});
             
             if(!cal)
@@ -178,6 +191,12 @@ const calenderService = {
             await cal.save();
            
             return cal;
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+        
 
 
         }

@@ -2,16 +2,22 @@ const image=require('../models/image');
 const cloudinary = require('../config/cloudinary')
 const imageService = {
     async getImagebyApartId(id) {
+        try{
         const images=await image.find({appartement:id});
         if (!images) {
             throw new Error('No images found');
         }
         return images;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async createImage(
         appartement,
         img
     ) {
+        try{
         const cloudinaryResponse = await cloudinary.uploader.upload(img);
         const imgURL = cloudinaryResponse.secure_url;
       
@@ -27,6 +33,10 @@ const imageService = {
         await imag.save();
       
         return imag;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async deleteImage(id) {
         const imag=image.findById(id);

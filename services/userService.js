@@ -2,20 +2,30 @@ const User=require('../models/user');
 const userToken=require('../config/token');
 const userService = {
     async getAllUsers() {
-        const users= await User.find();
-        if(!users)
-        {
-            throw new Error('No users found');
-        }
-        return users;
+        try{const users= await User.find();
+            if(!users)
+            {
+                throw new Error('No users found');
+            }
+            return users;}
+            catch(err)
+            {
+                console.log(err);
+            }
+        
     },
     async getUserById(id) {
-        const user = await User.findById(id).select('-password');
+        try{const user = await User.findById(id).select('-password');
         if(!user)
         {
             throw new Error('No user found');
         }
-        return user;
+        return user;}
+        catch(err)
+        {
+            console.log(err);
+        }
+        
     },
     async createUser(
         firstName,
@@ -25,6 +35,7 @@ const userService = {
         ntel,
         role
     ) {
+        try{
         const user = await User.findOne({ email: email });
          if (user) {
          throw new Error('User already exists');
@@ -45,11 +56,17 @@ const userService = {
         }
          await newUser.save();
          return {token:userToken(newUser._id)};
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
     },
     async updateUser(
         id,
         data
     ) {
+        try{
         const user=await User.findById(id).select('-password');
         if(!user)
         {
@@ -61,9 +78,15 @@ const userService = {
         user.ntel=data.ntel;
         
         return await user.save();
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
 
     },
     async deleteUser(id) {
+        try{
         const user = await User.findById(id);
         if(!user)
         {
@@ -71,13 +94,17 @@ const userService = {
         }
         await User.findByIdAndDelete(id);
         return user;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async login(
         email,
         password
     )
     {
-        
+        try{
         const user= await User.findOne({email:email});
         if (!user)
         {
@@ -88,11 +115,15 @@ const userService = {
             throw new Error('Wrong password');
         }
         else{return {user,token: userToken(user._id)};}
-        
+    }catch(err)
+    {
+        console.log(err);
+    }
 
     },
     async changerMotdePasse(id,data)
     {
+        try{
         const user= await User.findById(id);
         if (!user)
         {
@@ -106,6 +137,10 @@ const userService = {
         
         await user.save();
         return user;
+    }catch(err)
+    {
+        console.log(err);
+    }
 
     }
    

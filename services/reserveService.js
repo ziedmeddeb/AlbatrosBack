@@ -5,6 +5,7 @@ const notificationService=require('../services/notificationService');
 const reserveService={
 
     async createReserve(appartement,user,date,dateRes,ntel,firstName,lastName,remarque,status,nom,code){
+        try{
         const resrv=await reserve.create({
             appartement,
             user,
@@ -44,24 +45,39 @@ const reserveService={
         await resrv.save();
 
         return resrv;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async getReserveByApartId(id){
+        try{
         const resrv=await reserve.find({appartement:id});
         if(!resrv)
         {
             throw new Error('No reserve found');
         }
-        return resrv;
+        return resrv;}
+        catch(err)
+        {
+            console.log(err);
+        }
     },
     async getReserveByApartIdAndDate(id,date){
+        try{
         const resrv=await reserve.find({appartement:id,date:date});
         if(!resrv)
         {
             throw new Error('No reserve found');
         }
         return resrv;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async updateReserv(id,resv){
+        try{
         const resrv=await reserve.findById(id);
         if(!resrv)
         {
@@ -75,8 +91,13 @@ const reserveService={
   resrv.remarque = resv.remarque;
         await resrv.save();
         return resrv;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async annulerReserv(id){
+        try{
         const resrv=await reserve.findByIdAndDelete(id);
         if(!resrv)
         {
@@ -84,14 +105,23 @@ const reserveService={
         }
         
         return resrv;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
     async getReserveByDate(date){
+        try{
         const reservs=await reserve.find({date:date,status: { $in: ["En cours", "Amicale","Payé","Avance"] }});
         if(!reservs)
         {
             throw new Error('No reserve found');
         }
         return reservs;
+    }catch(err)
+    {
+        console.log(err);
+    }
     },
 
 };
