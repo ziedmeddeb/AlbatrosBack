@@ -40,7 +40,7 @@ const reserveService={
         console.log("Date actuelle:", currentFrenchDate);
         console.log("Date future:", futureFrenchDate);
 
-        notificationService.sendNotificationAdmin("Reservation pour "+code+" pour la date "+currentFrenchDate+" - "+futureFrenchDate);
+        await notificationService.sendNotificationAdmin("Reservation pour "+code+" pour la date "+currentFrenchDate+" - "+futureFrenchDate);
         await resrv.save();
 
         return resrv;

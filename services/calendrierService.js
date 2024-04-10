@@ -23,85 +23,85 @@ const calenderService = {
         let availabilit=[];
         
             availabilit.push({
-                dateDeb:new Date(2024,5,18),
-                dateFin:new Date(2024,5,25),
+                dateDeb:new Date(2024,5,16),
+                dateFin:new Date(2024,5,23),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,5,25),
-                dateFin:new Date(2024,6,2),
+                dateDeb:new Date(2024,5,23),
+                dateFin:new Date(2024,5,30),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,6,2),
-                dateFin:new Date(2024,6,9),
+                dateDeb:new Date(2024,5,30),
+                dateFin:new Date(2024,6,7),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,6,9),
-                dateFin:new Date(2024,6,16),
+                dateDeb:new Date(2024,6,7),
+                dateFin:new Date(2024,6,14),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,6,16),
-                dateFin:new Date(2024,6,23),
+                dateDeb:new Date(2024,6,14),
+                dateFin:new Date(2024,6,21),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,6,23),
-                dateFin:new Date(2024,6,30),
+                dateDeb:new Date(2024,6,21),
+                dateFin:new Date(2024,6,28),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,6,30),
-                dateFin:new Date(2024,7,6),
+                dateDeb:new Date(2024,6,28),
+                dateFin:new Date(2024,7,4),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,7,6),
-                dateFin:new Date(2024,7,13),
+                dateDeb:new Date(2024,7,4),
+                dateFin:new Date(2024,7,11),
                 price:0,
                 available:true,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,7,13),
-                dateFin:new Date(2024,7,20),
+                dateDeb:new Date(2024,7,11),
+                dateFin:new Date(2024,7,18),
                 price:0,
                 available:true,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,7,20),
-                dateFin:new Date(2024,7,27),
+                dateDeb:new Date(2024,7,18),
+                dateFin:new Date(2024,7,25),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,7,27),
-                dateFin:new Date(2024,8,3),
+                dateDeb:new Date(2024,7,25),
+                dateFin:new Date(2024,8,1),
                 available:true,
                 price:0,
                 status:"disponible"
             });
             availabilit.push({
-                dateDeb:new Date(2024,8,3),
-                dateFin:new Date(2024,8,10),
+                dateDeb:new Date(2024,8,1),
+                dateFin:new Date(2024,8,8),
                 available:true,
                 price:0,
                 status:"disponible"
