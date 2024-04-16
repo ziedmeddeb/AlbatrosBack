@@ -24,6 +24,10 @@ const appartementSchema = new mongoose.Schema({
         type:String,
         required:true,
         enum:['S+1','S+2','S+3']
+    },
+    visite:
+    {
+        type: String
     }
 });
 const appartement = mongoose.model('appartement',appartementSchema);
