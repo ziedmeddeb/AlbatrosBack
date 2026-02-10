@@ -21,6 +21,10 @@ const reserveSchema = new mongoose.Schema({
         default:""
 
     },
+    cin:{
+        type:String,
+        default:""
+    },
     date:{
         type:Date,
         required:true

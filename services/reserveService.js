@@ -4,13 +4,14 @@ const notificationService=require('../services/notificationService');
 
 const reserveService={
 
-    async createReserve(appartement,user,date,dateRes,ntel,firstName,lastName,remarque,status,nom,code){
+    async createReserve(appartement,user,date,dateRes,ntel,firstName,lastName,cin,remarque,status,nom,code){
         try{
         const resrv=await reserve.create({
             appartement,
             user,
             firstName,
             lastName,
+            cin,
             date,
             dateRes,
             ntel,

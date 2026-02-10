@@ -16,6 +16,10 @@ const colabSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    role:{
+        type:String,
+        default:"colab"
     }
 });
 const colab = mongoose.model('colab',colabSchema);

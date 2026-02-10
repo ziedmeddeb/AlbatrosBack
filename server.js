@@ -1,21 +1,21 @@
 
 const express=require('express');
 const mongoose=require('mongoose');
+const cors = require('cors');
 const app=express();
 
+// CORS must be configured before routes
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-
-
-
-
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 const port=process.env.PORT || 5000;
 app.listen(port,()=>console.log(`Server running on port ${port}`));
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-//allow comm front and back
-const cors = require('cors');
-app.use(cors());
 //db config
 const db=require('./config/mongoDB').MongoURI;
 
