@@ -20,7 +20,7 @@ app.listen(port,()=>console.log(`Server running on port ${port}`));
 const db=require('./config/mongoDB').MongoURI;
 
 //connect to mongoDB
-mongoose.connect(db,{useNewUrlParser:true})
+mongoose.connect(db)
 .then(()=>console.log('MongoDB connected...'))
 .catch(err=>console.log(err));
 
